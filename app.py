@@ -26,11 +26,11 @@ toxicity = {
 }
 
 if input_text and button:
-    tokenized_input = tokenizer([input_text], padding=True, truncation=True, max_length=512,return_tensors='pt')
-
-    output = model(**tokenized_input)
     
+    tokenized_input = tokenizer([input_text], padding=True, truncation=True, max_length=512,return_tensors='pt')
+    
+    output = model(**tokenized_input)
+
     y_pred = np.argmax(outputs.logits.detach().numpy(), axis = 1)
-    st.write("Prediction: ", toxicity[y_pred[0]] )    
-
-
+    
+    st.write("Prediction: ", toxicity[y_pred[0]])    
