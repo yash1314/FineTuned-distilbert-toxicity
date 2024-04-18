@@ -32,5 +32,5 @@ if input_text and button:
     output = model(**tokenized_input)
 
     y_pred = np.argmax(output.logits.detach().numpy(), axis = 1)
-    
-    st.write("Prediction: ", toxicity[y_pred[0]])    
+
+    st.success(f"Prediction:  {toxicity[y_pred[0]]}")    
