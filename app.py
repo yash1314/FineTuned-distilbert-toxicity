@@ -11,10 +11,12 @@ def get_model():
 
 tokenizer, model = get_model()
 
-st.title('Fine-Tuned Sentiment Analysis')
-st.markdown("""This webapp can check whether your input sentence is toxic or non-toxic sentence. The model used
-here is fine-tuned on custom dataset for detecting toxicity.""")
+st.title(':rainbow[Fine-Tuned Sentiment Analysis]')
+st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
+st.markdown("""This webapp can check whether your input sentence is toxic or non-toxic. The model used
+here is fine-tuned on custom dataset [link](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/models) for detecting toxicity.""", 
+unsafe_allow_html=True)
 
 input_text = st.text_area(label = ' ', placeholder = 'Enter your text here', max_chars = 512, 
                      label_visibility = "collapsed")
